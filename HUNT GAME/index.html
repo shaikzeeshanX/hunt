@@ -1,0 +1,85 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#171b1b" />
+    <title>James Hunter — A Palace Rescue</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="game-nav" aria-label="Game menu">
+      <button id="menu-toggle" type="button" aria-expanded="false" aria-controls="game-menu">Menu</button>
+      <div id="game-menu" class="game-menu" hidden>
+        <button id="pause-game" type="button" disabled>Pause</button>
+        <button id="resume-game" type="button" disabled>Resume</button>
+        <button id="quit-game" type="button" disabled>Quit</button>
+        <span id="music-track" class="music-track">Track: click.mp3</span>
+        <button id="next-track" type="button" disabled>Next track</button>
+        <span id="sound-status" class="sound-status" aria-live="polite">Sound: On</span>
+        <button id="sound-toggle" type="button" aria-label="Mute game sound" aria-pressed="true">Mute sound</button>
+      </div>
+    </nav>
+    <main class="game">
+      <header class="topbar">
+        <a class="wordmark" href="#" aria-label="James Hunter home">JAMES <span>HUNTER</span></a>
+        <a class="preview-link" href="3d-preview.html">3D Visual Preview ↗</a>
+        <div class="status" aria-label="Mission status">
+          <div class="status-item"><span>Location</span><strong id="location">Outer Road</strong></div>
+          <div class="status-item"><span>Rescued</span><strong id="rescued">0 / 20</strong></div>
+          <div class="status-item"><span>Keys</span><strong id="keys">0</strong></div>
+          <div class="status-item"><span>Weapon</span><strong id="weapon">Sword + Shield</strong></div>
+        </div>
+      </header>
+
+      <section class="stage" aria-label="Game">
+        <canvas id="game" width="1000" height="640" aria-label="James Hunter game world"></canvas>
+        <div class="hud">
+          <div class="health-card">
+            <div class="health-label"><span>HUNTER</span><strong id="health-text">250 / 250</strong></div>
+            <div class="bar"><i id="health-bar"></i></div>
+          </div>
+          <div id="enemy-card" class="enemy-card">
+            <div class="health-label"><span id="enemy-name">GUARD</span><strong id="enemy-health-text">100 / 100</strong></div>
+            <div class="bar enemy-bar"><i id="enemy-health-bar"></i></div>
+          </div>
+          <div class="objective"><span>YOUR OBJECTIVE</span><strong id="objective">Find the prisoners and bring them home.</strong></div>
+        </div>
+        <div id="prompt" class="prompt" aria-live="polite"></div>
+        <div id="pause-overlay" class="pause-overlay hidden" aria-live="polite" aria-label="Game paused">
+          <div class="pause-card">
+            <p class="kicker">MISSION PAUSED</p>
+            <h2>Take a breath, Hunter.</h2>
+            <button id="pause-resume" type="button">Resume game</button>
+          </div>
+        </div>
+        <div id="intro" class="overlay">
+          <div class="intro-card">
+            <p class="kicker">PALACE RESCUE</p>
+            <h1>JAMES<br /><span>HUNTER</span></h1>
+            <p class="intro-copy">The mountain kingdom's people have vanished behind the palace walls. Slip through the outer grounds, face the royal guards, and find the keys to the locked cells. Every key was carried by a guard.</p>
+            <div class="controls">
+              <span><b>WASD / arrows</b> Move</span><span><b>Click / Space</b> Attack</span>
+              <span><b>Q / right-click</b> Raise shield</span><span><b>Shift</b> Dodge</span>
+              <span><b>E</b> Take key / unlock / rescue</span>
+            </div>
+            <button id="start" type="button">Enter the grounds <span>→</span></button>
+            <p class="prototype-note">Playable browser prototype · cinematic 2D, not photorealistic 3D</p>
+          </div>
+        </div>
+        <div class="touch-ui" aria-label="Touch game controls">
+          <div class="dpad">
+            <button data-move="up" aria-label="Move up">↑</button>
+            <div><button data-move="left" aria-label="Move left">←</button><button data-move="down" aria-label="Move down">↓</button><button data-move="right" aria-label="Move right">→</button></div>
+          </div>
+          <div class="touch-actions"><button id="touch-dodge">DODGE</button><button id="touch-shield">SHIELD</button><button id="touch-attack" class="attack-button">ATTACK</button><button id="touch-use">USE</button></div>
+        </div>
+      </section>
+      <footer class="bottom-bar">
+        <p id="message">Find a guard. Defeat them and take the key they carried.</p>
+        <span><i class="legend-dot guard-dot"></i> Guard <i class="legend-dot key-dot"></i> Dropped key <i class="legend-dot captive-dot"></i> Captive</span>
+      </footer>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

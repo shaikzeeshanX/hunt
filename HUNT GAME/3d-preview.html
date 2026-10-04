@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#141817" />
+    <title>James Hunter — 3D Visual Preview</title>
+    <link rel="stylesheet" href="3d-preview.css" />
+  </head>
+  <body>
+    <main class="preview">
+      <header class="topbar">
+        <a class="wordmark" href="index.html">JAMES <span>HUNTER</span></a>
+        <div class="top-actions">
+          <span class="prototype-tag">3D VISUAL PROTOTYPE</span>
+          <a class="back-link" href="index.html">← 2D game</a>
+        </div>
+      </header>
+      <section class="scene">
+        <div id="loading" class="loading">Preparing the palace scene…</div>
+        <div class="scene-hud">
+          <div class="scene-title"><span>THE PALACE OUTER GROUNDS</span><strong>MOONLIT INFILTRATION</strong></div>
+          <div class="scene-objective"><span>OBJECTIVE</span><strong id="objective">Find the guard and recover the key.</strong></div>
+        </div>
+        <div class="bottom-hud">
+          <div class="health"><span>JAMES <b id="health-text">250 / 250</b></span><i><b id="health-bar"></b></i></div>
+          <div class="enemy-health" id="enemy-hud"><span>PALACE GUARD <b id="enemy-text">100 / 100</b></span><i><b id="enemy-bar"></b></i></div>
+          <button class="run-toggle" id="run-toggle" type="button" aria-pressed="false">
+            <span id="run-label">RUN MODE: OFF</span><i><b id="run-bar"></b></i>
+          </button>
+          <div class="key-status" id="key-status">NO KEY</div>
+        </div>
+        <div id="hint" class="hint">WASD move · Q / Run button, then hold and drag mouse or finger to run · release to stop · Space attack · right-click shield · Shift dodge · E interact</div>
+        <div class="intro">
+          <p class="eyebrow">THE CINEMATIC 3D DIRECTION</p>
+          <h1>INTO THE<br /><span>PALACE</span></h1>
+          <p>A realtime, third-person visual prototype for James, a palace guard, and the rescue world. Use WASD to move, or press Q and hold the mouse or finger on the scene to run; release to stop. Space attacks, right-click blocks, Shift dodges, and E interacts. These are procedural placeholder models—not photorealistic final characters.</p>
+          <button id="begin">Enter the grounds <span>→</span></button>
+          <small>Press Q, then hold the mouse or finger on the scene to run; release to stop. Space attacks. This preview needs internet to load its 3D engine.</small>
+        </div>
+        <div class="crosshair" aria-hidden="true"></div>
+      </section>
+      <footer><span>3D movement and combat preview</span><span>Prototype models only · final game needs authored 3D assets and animation</span></footer>
+    </main>
+    <script type="module" src="3d-preview.js"></script>
+  </body>
+</html>
